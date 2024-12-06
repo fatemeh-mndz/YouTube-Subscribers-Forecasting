@@ -1,3 +1,6 @@
+# **Overview**
+## A forecast to predict YouTube channel subscribers for the next 30 days using LSTM and Dense models. For each model, I implemented four different methods: 7 inputs for 7 outputs, 30 inputs for 7 outputs, 30 inputs for 30 outputs, and 60 inputs for 30 outputs.I have included the results of each method in my README, which you can review.
+
 # LSTM Models
 ## LSTM 7-7
 ### Total subscribers till 2024-11-13 : 6383, next_30_days: 651 ===> final after 30 days: 7034
