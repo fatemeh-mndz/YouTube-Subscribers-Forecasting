@@ -27,7 +27,7 @@
 # Dense Models
 
 ## Dense 7-7
-### Total subscribers till 2024-11-13 : 6383, next_30_days: 594.0 ===> final after 30 days: 6977
+### Total subscribers till 2024-11-13: 6383, next_30_days: 478 ===> final after 30 days: 6861
 ### Error : MAE Train data  : 0.1006 , MAE  Test data : 0.1234
 ![Model Output](photo/dense7-7.png)
 
@@ -38,11 +38,11 @@
 
 
 ## Dense 30-30
-### Total subscribers till 2024-11-13 00:00:00: 6383, next_30_days: 386= ===> final after 30 days: 6769
+### Total subscribers till 2024-11-13 : 6383, next_30_days: 386= ===> final after 30 days: 6769
 ### Error : MAE Train data  : 0.0975 , MAE  Test data : 0.1357
 ![Model Output](photo/dense30-30.png)
 
 ## Dense 60-30
-### Total subscribers till 2024-11-13 : 6383, next_30_days: 602.0 ===> final after 30 days: 6985
+### Total subscribers till 2024-11-13 : 6383, next_30_days: 602 ===> final after 30 days: 6985
 ### Error : MAE Train data  : 0.0828 , MAE  Test data : 0.1357
 ![Model Output](photo/dnese60-30.png)
