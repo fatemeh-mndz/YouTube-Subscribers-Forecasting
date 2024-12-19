@@ -41,31 +41,34 @@ def model_plot(actual_data, predict_data):
     plt.grid()
     plt.show()
 
+def read_data(file_path, debug = False):
+    df = pd.read_csv('Totals.csv')
 
-def read_data(file_path, debug = False, columns_to_drop = ['Unnamed: 2', 'Unnamed: 3', 'Unnamed: 4']):
-    df = pd.read_csv('../../datasets/yt_subscribers.csv')
     if debug:
         print(df.head(10))
         print('----------------------------------------------------')
     
+
+    
     df['Date'] = pd.to_datetime(df['Date'])
 
-    clean_df = df.drop(columns=columns_to_drop)
 
-    clean_df.sort_values(by='Date', inplace=True)
+
+    df.sort_values(by='Date', inplace=True)
     if debug:
-        print(clean_df.head(10))
+        print(df.head(10))
 
-    clean_df.set_index('Date', inplace=True)
+    df.set_index('Date', inplace=True)
 
-    result = np.array(clean_df.iloc[:])
+    result = np.array(df.iloc[:])
 
-    return clean_df, result
+    return df, result
+
 
 def prepare_train_test_data(data, time_step_in, time_step_out, test_size=0.4):
     X, Y = create_dataset(data, time_step_in, time_step_out)
 
-    X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size=test_size)
+    X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size=test_size,shuffle=False)
 
     scaler = MinMaxScaler(feature_range=(0,1))
     x_train = scaler.fit_transform(X_train)
@@ -75,8 +78,6 @@ def prepare_train_test_data(data, time_step_in, time_step_out, test_size=0.4):
 
     print(f'x_train shape: {x_train.shape}, y_train shape: {y_train.shape}, x_test shape: {x_test.shape}, y_test shape: {y_test.shape}')
     return x_train, x_test, y_train, y_test, scaler
-
-
 
 
 
