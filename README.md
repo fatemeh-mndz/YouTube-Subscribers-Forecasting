@@ -96,15 +96,57 @@ All results, including predicted subscriber counts and performance metrics, are 
   ![Model Output](photo/dense30-30.png)
 
 ---
+### Predicted Subscriber Growth
 
-## Conclusion
+#### Predicted Subscribers for Each Model
 
-This project demonstrates the ability of both **LSTM** and **Dense networks** to forecast YouTube subscriber growth with relatively low Mean Absolute Error. 
+- **LSTM 7-7**: 682.0 subscribers
+- **LSTM 30-7**: 629.0 subscribers
+- **LSTM 60-30**: 616.0 subscribers
+- **LSTM 30-30**: 392.0 subscribers
+- **Dense 7-7**: 740.0 subscribers
+- **Dense 30-7**: 832.0 subscribers
+- **Dense 60-30**: 497.0 subscribers
+- **Dense 30-30**: 460.0 subscribers
 
+#### Sum of Predicted Subscribers
 
+The total number of predicted subscribers across all models is calculated as follows:
 
-- The **LSTM 30-7 model** had the lowest error overall with an MAE of **0.0959** 🏆, making it the best performer in terms of accuracy.
-- The **Dense 30-7 model** predicted a higher subscriber increase, but had a slightly higher error (MAE: **0.1185**) compared to LSTM 30-7.
+```
+682.0 + 629.0 + 616.0 + 392.0 + 740.0 + 832.0 + 497.0 + 460.0 = 4848.0
+```
 
-The results show that both architectures can be valuable in predicting subscriber trends, with LSTM models potentially better suited for capturing sequential patterns, and Dense models providing strong overall performance.
+Thus, the **sum of predicted subscribers** is **4848.0**.
+
+#### Number of Models
+
+There are a total of **8 models** used for prediction.
+
+#### Average Predicted Subscribers
+
+The **average number of predicted subscribers** over the next 30 days across all models is calculated by dividing the total sum by the number of models:
+
+```
+Average = 4848.0 ÷ 8 = 606.0
+```
+
+Adding this average increase to the initial count of **8117 subscribers**:
+
+```
+8117 + 606.0 = 8723
+```
+
+This average **final subscriber count** is **8723**.
+
+However, the best model, **LSTM 30-7**, predicts the final subscriber count to be **8746** by **01/12/2025**.
+
+### Conclusion
+
+- The **LSTM 30-7 model** had the lowest error overall with an MAE of **0.0959**, making it the best performer in terms of accuracy.
+
+Based on the models, the **average predicted growth** is **606 subscribers** over the next 30 days, bringing the estimated total to **8723 subscribers**. The **best model (LSTM 30-7)** predicts a final count of **8746**, which is very close to the **actual recorded count of 8750 subscribers** on **01/12/2025**.
+
+This confirms that the forecasting models can effectively predict subscriber growth, with small differences compared to real-world results.
+
 
